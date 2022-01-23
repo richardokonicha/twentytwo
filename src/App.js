@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Box, CssBaseline } from '@mui/material'
+import { Box, CssBaseline, Typography } from '@mui/material'
+import CardSlot from './CardSlot';
 
 
 function App() {
@@ -10,11 +11,13 @@ function App() {
 
   theme.typography.h3 = {
     fontSize: '1.2rem',
+    fontFamily: '"Dongle", "Helvetica", "Arial", sans-serif',
     '@media (min-width:600px)': {
       fontSize: '1.5rem',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '3.4rem',
+
     },
   };
 
@@ -45,11 +48,10 @@ function App() {
           fontSize: '3.4rem',
           // backgroundColor: `rgb(58, 214, ${mousePos.x})`,
         }
-        }
-
-      >
-        {/* {mousePos.x} */}
-        Hi there, I am Richard Okonicha
+        }>
+        <Typography fontSize={28}>Hi there, I am Richard Okonicha
+        </Typography>
+        <CardSlot />
       </Box>
     </ThemeProvider >
   );
